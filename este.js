@@ -34,7 +34,7 @@ app.controller('mainCtlr', function ($scope,$location,$routeParams) {
       {'img': 'imgs/Wrong_Doing_View_02.jpg', 'titulo': '', 'autor': '', 'materiales': '','fecha': ''},
       {'img': 'imgs/Wrong_Doing_View_03.jpg', 'titulo': '', 'autor': '', 'materiales': '','fecha': ''},
       {'img': 'imgs/Wrong_Doing_YesSolid_Plot_JJZ_a.jpg', 'titulo': 'Jiajia Zhang, 2016', 'autor': 'Yes, Solid (Plot)', 'materiales':'Sharpie on printed adhesive vinyl, acrylic glass, wall mount.','fecha': ''},
-      {'img': 'Wron_Doing_Visitor_JJZ_2016.jpg', 'titulo': 'Jiajia Zhang, 2016', 'autor': 'Visitor', 'materiales':'C-print, artist frame.','fecha': ''},
+      {'img': 'imgs/Wron_Doing_Visitor_JJZ_2016.jpg', 'titulo': 'Jiajia Zhang, 2016', 'autor': 'Visitor', 'materiales':'C-print, artist frame.','fecha': ''},
       {'img': 'imgs/Wrong_Doing_ SpineS_VE.jpg', 'titulo': 'Victor Esther, 2016', 'autor': 'Spine (Frieze - October 2015), Spine (Artforum - February 2016)', 'materiales': '', 'fecha': 'Spine (Frieze - October 2014), Spine (Frieze - February 2016)'},
       {'img': 'imgs/Spine_AF_AA.jpg', 'titulo': '#Spine (Artforum - November 2013)', 'autor': '#Spine (Art in America - February 2016)', 'materiales': '','fecha': ''},
 
@@ -65,9 +65,25 @@ app.controller('mainCtlr', function ($scope,$location,$routeParams) {
       }
     }
   }
+  $scope.init= function(){
+    $scope.showLines = true;
+    $scope.showForm = false;
+  }
   $scope.inicio = function(){
     console.log("inicio");
     $scope.showEventoIndividual = false;
-    $scope.showSubscribe = false;
+    $scope.showSubscribe = !$scope.showSubscribe;
+    $scope.showForm = false;
+    $scope.showLines = true;
+  }
+
+  $scope.toggleSignup = function(){
+    if($scope.showLines == true){
+      $scope.showLines = false;
+      $scope.showForm = true;
+    }else if($scope.showLines == false){
+      $scope.showLines = true;
+      $scope.showForm = false;
+    }
   }
 });

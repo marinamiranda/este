@@ -1,4 +1,4 @@
-<div ng-init="showSubscribe == false;">
+<div ng-init="showSubscribe == false;init()">
     <div class="address">
         <span class="galleryName" ng-click="inicio();">ESTE</span><br />
         <span ng-click="inicio();" style="cursor: pointer;">
@@ -12,7 +12,7 @@
 
     <div class="address" ng-if="!showEventoIndividual">
 
-    <div ng-show="showSubscribe == true">
+    <div ng-show="showForm">
         <form action="http://esteste.us12.list-manage.com/subscribe/post" method="POST">
             <input type="hidden" name="u" value="4a13e02c63bae163f59e03a1e">
             <input type="hidden" name="id" value="8c1364d289">
@@ -22,8 +22,8 @@
         </form>
     </div>
 
-    <div ng-show="!showSubscribe">
-        <span ng-click="showSubscribe = true" style="cursor:pointer;" class="">------></span>
+    <div ng-show="showLines">
+        <span ng-click="toggleSignup();" style="cursor:pointer;" class="">------></span>
     </div>
     </div>
 
