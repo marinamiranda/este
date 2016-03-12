@@ -49,7 +49,7 @@ app.controller('mainCtlr', function ($scope,$location,$routeParams) {
       "location2": "",
       "image": [
         {'img': 'imgs/Invisibles.jpg', 'titulo': 'Buscando Invisibles', 'autor': 'A collection of essays by David García Casado', 'materiales': 'Spanish edition, 143p','fecha': 'Order by email - $15'},
-        //{'img': 'imgs/Invisibles.jpg', 'titulo': '', 'autor': '', 'materiales': '','fecha': 'January 2016'}
+        //{'img': 'imgs/image.jpg', 'titulo': '', 'autor': '', 'materiales': '','fecha': 'January 2016'},
 
       ]
     }
