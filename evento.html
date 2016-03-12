@@ -1,0 +1,56 @@
+<div ng-init="showSubscribe == false;">
+    <div class="address">
+        <span class="galleryName" ng-click="inicio();">ESTE</span><br />
+        <span ng-click="inicio();" style="cursor: pointer;">
+        231 Stanhope Street<br />
+        Brooklyn, NY 11237<br />
+            <div style="height:5px;"></div>
+            <span style="color:black;">Open by appointment</span><br />
+        </span>
+        <a style="" href="mailto:info@esteste.com" style="color:#666666;" target="_top">info@esteste.com</a><br />
+    </div>
+
+    <div class="address" ng-if="!showEventoIndividual">
+
+    <div ng-show="showSubscribe == true">
+        <form action="http://esteste.us12.list-manage.com/subscribe/post" method="POST">
+            <input type="hidden" name="u" value="4a13e02c63bae163f59e03a1e">
+            <input type="hidden" name="id" value="8c1364d289">
+
+            <input type="email" autocapitalize="off" placeholder="email" class="email-field" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="">
+            <button  type="submit" class="subscribe-submit">Subscribe</button>
+        </form>
+    </div>
+
+    <div ng-show="!showSubscribe">
+        <span ng-click="showSubscribe = true" style="cursor:pointer;" class="">------></span>
+    </div>
+    </div>
+
+
+    <div class="eventos" ng-if="!showEventoIndividual">
+        <div ng-repeat="show in shows" class="show" ng-click="showEvento(show.id)" style="cursor: pointer;">
+            <span class="showTitle"><q>{{show.title}}</q></span><br />
+            <span>{{show.artist}}</span><br />
+            <span>{{show.location}}</span><br />
+            <span>{{show.location2}}</span><br />
+        </div>
+    </div>
+
+    <div ng-if="showEventoIndividual" class="evento">
+        <!--<span class="showTitle"><q>{{current.title}}</q></span><br />
+        <span>{{current.artist}}</span><br />
+        <span>{{current.location}}</span><br />-->
+        <div ng-repeat="img in current.image" class="eventDocs">
+            <img ng-if="current.image" style="    width: auto; height: 561px;" ng-src="{{img.img}}">
+            <div class="photoCredits">{{img.titulo}}</div>
+            <div class="photoCredits">{{img.autor}}</div>
+            <div class="photoCredits">{{img.materiales}}</div>
+            <div class="photoCredits">{{img.fecha}}</div>
+        </div>
+    </div>
+
+</div>
+
+
+
